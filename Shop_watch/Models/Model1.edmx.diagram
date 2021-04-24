@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d2180740397a446d8ed88e33901c20d5" Name="Diagram1">
+        <EntityTypeShape EntityType="Shop_watchModel.San_pham" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shop_watchModel.Tai_khoan_Ad" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shop_watchModel.Tai_khoan_Kh" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shop_watchModel.Don_hang" Width="1.5" PointX="7" PointY="6.625" />
+        <AssociationConnector Association="Shop_watchModel.FK__Don_hang__Id_san__19DFD96B" />
+        <EntityTypeShape EntityType="Shop_watchModel.Binh_luan" Width="1.5" PointX="7" PointY="2.5" />
+        <AssociationConnector Association="Shop_watchModel.FK__Binh_luan__Id_sa__29221CFB" />
+        <AssociationConnector Association="Shop_watchModel.FK__Binh_luan__Id_ta__2A164134" />
+        <AssociationConnector Association="Shop_watchModel.FK__Binh_luan__Id_ta__2B0A656D" />
+        <EntityTypeShape EntityType="Shop_watchModel.Tin_tuc" Width="1.5" PointX="5" PointY="6" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

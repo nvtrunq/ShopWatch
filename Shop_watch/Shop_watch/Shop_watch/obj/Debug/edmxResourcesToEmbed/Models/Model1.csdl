@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Shop_watchModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="San_pham">
+    <Key>
+      <PropertyRef Name="Id_san_pham" />
+    </Key>
+    <Property Name="Id_san_pham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten_san_pham" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Hinh_anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Loai_san_pham" Type="Byte" />
+    <Property Name="Gia_goc" Type="Int32" Nullable="false" />
+    <Property Name="Gia_sale" Type="Int32" />
+    <Property Name="So_luong" Type="Int32" />
+    <Property Name="Nguoi_cap_nhat" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Ngay_Cap_nhat" Type="DateTime" Precision="3" />
+    <Property Name="Mo_ta_ngan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Mo_ta_dai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Chu_thich" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Trang_thai" Type="Byte" />
+    <NavigationProperty Name="Don_hang" Relationship="Shop_watchModel.FK__Don_hang__Id_san__19DFD96B" FromRole="San_pham" ToRole="Don_hang" />
+    <NavigationProperty Name="Binh_luan" Relationship="Shop_watchModel.FK__Binh_luan__Id_sa__29221CFB" FromRole="San_pham" ToRole="Binh_luan" />
+  </EntityType>
+  <EntityType Name="Tai_khoan_Ad">
+    <Key>
+      <PropertyRef Name="Id_Tai_khoan_ad" />
+    </Key>
+    <Property Name="Id_Tai_khoan_ad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ho_ten" Type="String" MaxLength="225" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gioi_tinh" Type="Byte" Nullable="false" />
+    <Property Name="Ngay_sinh" Type="DateTime" Precision="0" />
+    <Property Name="Dia_chi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="So_dien_thoai" Type="Int32" Nullable="false" />
+    <Property Name="Hinh_anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoi_cap_nhat" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Ngay_cap_nhat" Type="DateTime" Precision="3" />
+    <Property Name="Chu_thich" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Trang_thai" Type="Byte" />
+    <Property Name="Id_chuc_vu" Type="Byte" />
+    <Property Name="Mat_khau" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Binh_luan" Relationship="Shop_watchModel.FK__Binh_luan__Id_ta__2B0A656D" FromRole="Tai_khoan_Ad" ToRole="Binh_luan" />
+  </EntityType>
+  <EntityType Name="Tai_khoan_Kh">
+    <Key>
+      <PropertyRef Name="Id_Tai_khoan_kh" />
+    </Key>
+    <Property Name="Id_Tai_khoan_kh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ho_ten" Type="String" MaxLength="225" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gioi_tinh" Type="Byte" Nullable="false" />
+    <Property Name="Ngay_sinh" Type="DateTime" Precision="0" />
+    <Property Name="Dia_chi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="So_dien_thoai" Type="Int32" Nullable="false" />
+    <Property Name="Hinh_anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoi_cap_nhat" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Ngay_cap_nhat" Type="DateTime" Precision="3" />
+    <Property Name="Trang_thai" Type="Byte" />
+    <Property Name="Mat_khau" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Binh_luan" Relationship="Shop_watchModel.FK__Binh_luan__Id_ta__2A164134" FromRole="Tai_khoan_Kh" ToRole="Binh_luan" />
+  </EntityType>
+  <EntityContainer Name="Shop_watchEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="San_pham" EntityType="Self.San_pham" />
+    <EntitySet Name="Tai_khoan_Ad" EntityType="Self.Tai_khoan_Ad" />
+    <EntitySet Name="Tai_khoan_Kh" EntityType="Self.Tai_khoan_Kh" />
+    <EntitySet Name="Don_hang" EntityType="Shop_watchModel.Don_hang" />
+    <AssociationSet Name="FK__Don_hang__Id_san__19DFD96B" Association="Shop_watchModel.FK__Don_hang__Id_san__19DFD96B">
+      <End Role="San_pham" EntitySet="San_pham" />
+      <End Role="Don_hang" EntitySet="Don_hang" />
+    </AssociationSet>
+    <EntitySet Name="Binh_luan" EntityType="Shop_watchModel.Binh_luan" />
+    <AssociationSet Name="FK__Binh_luan__Id_sa__29221CFB" Association="Shop_watchModel.FK__Binh_luan__Id_sa__29221CFB">
+      <End Role="San_pham" EntitySet="San_pham" />
+      <End Role="Binh_luan" EntitySet="Binh_luan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Binh_luan__Id_ta__2A164134" Association="Shop_watchModel.FK__Binh_luan__Id_ta__2A164134">
+      <End Role="Tai_khoan_Kh" EntitySet="Tai_khoan_Kh" />
+      <End Role="Binh_luan" EntitySet="Binh_luan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Binh_luan__Id_ta__2B0A656D" Association="Shop_watchModel.FK__Binh_luan__Id_ta__2B0A656D">
+      <End Role="Tai_khoan_Ad" EntitySet="Tai_khoan_Ad" />
+      <End Role="Binh_luan" EntitySet="Binh_luan" />
+    </AssociationSet>
+    <EntitySet Name="Tin_tuc" EntityType="Shop_watchModel.Tin_tuc" />
+  </EntityContainer>
+  <EntityType Name="Don_hang">
+    <Key>
+      <PropertyRef Name="Id_don_hang" />
+    </Key>
+    <Property Name="Id_don_hang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_san_pham" Type="Int32" />
+    <Property Name="Id_tai_khoan_Kh" Type="Int32" />
+    <Property Name="Thanh_tien" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Trang_thai" Type="Byte" />
+    <Property Name="So_luong" Type="Int32" />
+    <Property Name="Ngay_tao" Type="DateTime" Precision="3" />
+    <Property Name="Id_nguoi_cap_nhat" Type="Int32" />
+    <Property Name="Ngay_cap_nhat" Type="DateTime" Precision="3" />
+    <Property Name="Chu_thich" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="San_pham" Relationship="Shop_watchModel.FK__Don_hang__Id_san__19DFD96B" FromRole="Don_hang" ToRole="San_pham" />
+  </EntityType>
+  <Association Name="FK__Don_hang__Id_san__19DFD96B">
+    <End Type="Shop_watchModel.San_pham" Role="San_pham" Multiplicity="0..1" />
+    <End Type="Shop_watchModel.Don_hang" Role="Don_hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="San_pham">
+        <PropertyRef Name="Id_san_pham" />
+      </Principal>
+      <Dependent Role="Don_hang">
+        <PropertyRef Name="Id_san_pham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Binh_luan">
+    <Key>
+      <PropertyRef Name="Id_binh_luan" />
+    </Key>
+    <Property Name="Id_binh_luan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_san_pham" Type="Int32" />
+    <Property Name="Id_tai_khoan_kh" Type="Int32" />
+    <Property Name="Noi_dung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ngay_tao" Type="DateTime" Precision="3" />
+    <Property Name="Id_tai_khoan_Ad" Type="Int32" />
+    <Property Name="Tra_loi_binh_luan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ngay_cap_nhat" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="San_pham" Relationship="Shop_watchModel.FK__Binh_luan__Id_sa__29221CFB" FromRole="Binh_luan" ToRole="San_pham" />
+    <NavigationProperty Name="Tai_khoan_Kh" Relationship="Shop_watchModel.FK__Binh_luan__Id_ta__2A164134" FromRole="Binh_luan" ToRole="Tai_khoan_Kh" />
+    <NavigationProperty Name="Tai_khoan_Ad" Relationship="Shop_watchModel.FK__Binh_luan__Id_ta__2B0A656D" FromRole="Binh_luan" ToRole="Tai_khoan_Ad" />
+  </EntityType>
+  <Association Name="FK__Binh_luan__Id_sa__29221CFB">
+    <End Type="Shop_watchModel.San_pham" Role="San_pham" Multiplicity="0..1" />
+    <End Type="Shop_watchModel.Binh_luan" Role="Binh_luan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="San_pham">
+        <PropertyRef Name="Id_san_pham" />
+      </Principal>
+      <Dependent Role="Binh_luan">
+        <PropertyRef Name="Id_san_pham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Binh_luan__Id_ta__2A164134">
+    <End Type="Shop_watchModel.Tai_khoan_Kh" Role="Tai_khoan_Kh" Multiplicity="0..1" />
+    <End Type="Shop_watchModel.Binh_luan" Role="Binh_luan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tai_khoan_Kh">
+        <PropertyRef Name="Id_Tai_khoan_kh" />
+      </Principal>
+      <Dependent Role="Binh_luan">
+        <PropertyRef Name="Id_tai_khoan_kh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Binh_luan__Id_ta__2B0A656D">
+    <End Type="Shop_watchModel.Tai_khoan_Ad" Role="Tai_khoan_Ad" Multiplicity="0..1" />
+    <End Type="Shop_watchModel.Binh_luan" Role="Binh_luan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tai_khoan_Ad">
+        <PropertyRef Name="Id_Tai_khoan_ad" />
+      </Principal>
+      <Dependent Role="Binh_luan">
+        <PropertyRef Name="Id_tai_khoan_Ad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Tin_tuc">
+    <Key>
+      <PropertyRef Name="Id_Tintuc" />
+    </Key>
+    <Property Name="Id_Tintuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten_tin_tuc" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Hinh_anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoi_cap_nhat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Ngay_Cap_nhat" Type="DateTime" Precision="3" />
+    <Property Name="Chu_thich" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Trang_thai" Type="Byte" />
+    <Property Name="Noi_dung" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

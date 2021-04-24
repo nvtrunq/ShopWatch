@@ -1,0 +1,126 @@
+﻿@model Shop_watch.Models.Tai_khoan_Kh
+
+@{
+    ViewBag.Title = "CapNhatTT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .container {
+    margin-top: 190px;
+}.col-md-3 {
+         width: 5%;
+    float: left;
+}li {
+    display: inline-grid;
+}
+</style>
+@*<div class="container" style="margin-top:200px;">
+    <form action="/Home/CapNhatTT" method="post">
+        <input type="hidden" name="Id_Tai_khoan_kh" value="@Model.Id_Tai_khoan_kh" />
+        <input type="text" name="Ho_ten" value="@Model.Ho_ten" />
+        @if (Model.Gioi_tinh == 1)
+        {
+            <div class="col-md-3">
+                <div class="col-md-1">
+                    <input type="radio" name="Gioi_tinh" id="Gioi_Tinh_Nam" value="1" checked />
+                </div>
+                <div class="col-md-2">
+                    <label for="Gioi_Tinh_Nam" class="lbr"> Nam</label>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="col-md-1">
+                    <input type="radio" name="Gioi_tinh" id="Gioi_Tinh_Nu" value="2" />
+                </div>
+                <div class="col-md-2">
+                    <label for="Gioi_Tinh_Nu" class="lbr"> Nữ</label>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-3">
+                <div class="col-md-1">
+                    <input type="radio" name="Gioi_tinh" id="Gioi_Tinh_Nam" value="1" />
+                </div>
+                <div class="col-md-2">
+                    <label for="Gioi_Tinh_Nam" class="lbr"> Nam</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-1">
+                    <input type="radio" name="Gioi_tinh" id="Gioi_Tinh_Nu" value="2" checked />
+                </div>
+                <div class="col-md-2">
+                    <label for="Gioi_Tinh_Nu" class="lbr"> Nữ</label>
+                </div>
+            </div>
+        }
+        <input type="date" name="Ngay_sinh" value="@Model.Ngay_sinh" />
+        <input type="text" name="Dia_chi" value="@Model.Dia_chi" />
+        <input type="email" name="Email" value="@Model.Email" />
+        <input type="text" name="So_dien_thoai" value="@Model.So_dien_thoai" />
+        <input type="password" name="Mat_khau" value="@Model.Mat_khau" />
+        <input type="number" name="Trang_thai" value="@Model.Trang_thai" />
+        <button type="submit" class="btn btn-danger">Cập nhật</button>
+    </form>
+</div>*@
+<div class="container">
+    <form action="/Home/CapNhatTT" method="post">
+        <ul>
+            <li>
+                Họ và tên
+                <input type="hidden" name="Id_Tai_khoan_kh" value="@Model.Id_Tai_khoan_kh" />
+                <input type="text" name="Ho_ten" value="@Model.Ho_ten" />
+            </li>
+            <li>
+                @if (Model.Gioi_tinh == 1)
+                {
+                    <div class="col-md-3">
+                        <div class="col-md-1">
+                            <input type="radio" name="Gioi_tinh" id="Gioi_Tinh_Nam" value="1" checked />
+                        </div>
+                        <div class="col-md-2">
+                            <label for="Gioi_Tinh_Nam" class="lbr"> Nam</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="col-md-1">
+                            <input type="radio" name="Gioi_tinh" id="Gioi_Tinh_Nu" value="2" />
+                        </div>
+                        <div class="col-md-2">
+                            <label for="Gioi_Tinh_Nu" class="lbr"> Nữ</label>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-3">
+                        <div class="col-md-1">
+                            <input type="radio" name="Gioi_tinh" id="Gioi_Tinh_Nam" value="1" />
+                        </div>
+                        <div class="col-md-2">
+                            <label for="Gioi_Tinh_Nam" class="lbr"> Nam</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-1">
+                            <input type="radio" name="Gioi_tinh" id="Gioi_Tinh_Nu" value="2" checked />
+                        </div>
+                        <div class="col-md-2">
+                            <label for="Gioi_Tinh_Nu" class="lbr"> Nữ</label>
+                        </div>
+                    </div>
+                }
+            </li>
+            <li>Địa chỉ: <input type="text" name="Dia_chi" value="@Model.Dia_chi" /></li>
+            <li>Số điện thoại: <input type="text" name="So_dien_thoai" value="@Model.So_dien_thoai" /></li>
+            <li>Email: <input type="email" name="Email" value="@Model.Email" /></li>
+            <li>Mật khẩu: <input type="password" name="Mat_khau" value="@Model.Mat_khau" /></li>
+            <li>Trạng thái: <input type="number" name="Trang_thai" value="@Model.Trang_thai" /></li>
+            <li><button type="submit" class="btn btn-danger">Cập nhật</button></li>
+        </ul>
+    </form>
+</div>

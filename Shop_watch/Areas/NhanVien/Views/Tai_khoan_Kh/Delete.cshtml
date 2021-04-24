@@ -1,0 +1,113 @@
+﻿@model Shop_watch.Models.Tai_khoan_Kh
+
+@{
+    ViewBag.Title = "Xoá tài khoản khách hàng";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<h2>Xoá tài khoan khách hàng</h2>
+
+<h3>Bạn có chắc chắn muốn xoá bỏ tài khoản khách hàng này?</h3>
+<div>
+    <h4>Tai_khoan_Kh</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ho_ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ho_ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gioi_tinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gioi_tinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay_sinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay_sinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dia_chi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dia_chi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.So_dien_thoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.So_dien_thoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh_anh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinh_anh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nguoi_cap_nhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nguoi_cap_nhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay_cap_nhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay_cap_nhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trang_thai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trang_thai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mat_khau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mat_khau)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay trở lại", "Index")
+        </div>
+    }
+</div>

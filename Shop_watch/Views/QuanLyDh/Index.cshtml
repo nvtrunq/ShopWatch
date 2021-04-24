@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Shop_watch.Models.Don_hang>
+
+@{
+    ViewBag.Title = "Đơn hàng của tôi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    table.table {
+    margin-top: 71px;
+}
+    h3 {
+    margin-top: 16px;
+}
+</style>
+<h3>Thông tin đơn hàng</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            Ngày mua
+        </th>
+        <th>
+            Sản phẩm
+        </th>
+        <th>
+            Tổng tiền
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Trạng thái đơn hàng
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Model.First().Ngay_tao
+        </td>
+        <td>
+            @Model.First().San_pham.Ten_san_pham
+        </td>
+        <td>
+            @Model.First().Thanh_tien
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.So_luong)
+        </td>
+        <td>
+            @if(item.Trang_thai==2)
+            {
+                <text>Đang chờ xử lý</text>
+            }
+            else
+            {
+                if(item.Trang_thai==3)
+                {
+                    <text>Đã xử lý đơn hàng</text>
+                }
+                else
+                {
+                    if(item.Trang_thai==4)
+                    {
+                        <text>Đang giao hàng</text>
+                    }
+                }
+            }
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Id_nguoi_cap_nhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngay_cap_nhat)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Chu_thich)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.San_pham.Ten_san_pham)
+        </td>*@
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_don_hang }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_don_hang }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_don_hang })
+        </td>*@
+    </tr>
+}
+
+</table>

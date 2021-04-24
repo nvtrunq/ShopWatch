@@ -1,0 +1,167 @@
+﻿@model Shop_watch.Models.Tai_khoan_Ad
+
+@{
+    ViewBag.Title = "Chỉnh sửa";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Tai_khoan_Ad</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id_Tai_khoan_ad)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ho_ten, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Ho_ten, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Ho_ten, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Gioi_tinh, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Gioi_tinh, new List<SelectListItem>()
+      {
+          new SelectListItem{Text="Nam", Value = "1"},
+          new SelectListItem{Text="Nữ", Value = "2"},
+      }, "Chọn Giới Tính", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Gioi_tinh, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ngay_sinh, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Ngay_sinh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Ngay_sinh, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Dia_chi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Dia_chi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Dia_chi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.So_dien_thoai, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.So_dien_thoai, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.So_dien_thoai, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Hinh_anh, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Hinh_anh, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+            @Html.ValidationMessageFor(model => model.Hinh_anh, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-2">
+            <button type="button" id="selectFiles" class="btn btn-primary">Chọn ảnh</button>
+        </div>
+        <div class="col-md-12 col-md-offset-2">
+            <img src="~/HinhAnh/noimage.jpg" style="width:200px;padding-top:10px; box-shadow:2px 2px 10px #808080;" id="showImg" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nguoi_cap_nhat, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nguoi_cap_nhat, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nguoi_cap_nhat, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ngay_cap_nhat, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Ngay_cap_nhat, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Ngay_cap_nhat, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Chu_thich, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Chu_thich, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Chu_thich, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Id_chuc_vu, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Id_chuc_vu, new List<SelectListItem>()
+      {
+          new SelectListItem{Text="Giám đốc", Value = "1"},
+          new SelectListItem{Text="Nhân viên", Value = "2"},
+      }, "Chọn Trạng Thái Quản Trị", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Id_chuc_vu, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Trang_thai, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Trang_thai, new List<SelectListItem>()
+      {
+          new SelectListItem{Text="Hoạt động", Value = "1"},
+          new SelectListItem{Text="Không hoạt động", Value = "2"},
+      }, "Chọn Trạng Thái Tài Khoản", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Trang_thai, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Mat_khau, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Mat_khau, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Mat_khau, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Quay trở lại", "Index")
+</div>
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            CKEDITOR.replace("Chu_thich");
+            $("#selectFiles").click(function () {
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (fileUrl) {
+                    $("#Hinh_anh").val(fileUrl);
+                    $("#showImg").attr("src", fileUrl);
+                };
+                finder.popup();
+            });
+        })
+    </script>
+}

@@ -1,0 +1,49 @@
+﻿@model Shop_watch.Models.Don_hang
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    table.table-1 {
+        margin-top: 93px;
+        margin-left: 205px;
+    }
+</style>
+<table class="table-1" style="width:1000px">
+    <th>Họ và tên</th>
+    <th>Địa chỉ</th>
+    <th>Số điện thoại</th>
+
+    <th>Hình ảnh</th>
+    <th>Số lượng</th>
+    <th>Đơn vị cung cấp</th>
+    <th>Thành tiền</th>
+    <tr>
+        @foreach (var item in ViewBag.Ho_ten)
+        {
+            <td>@item.Ho_ten</td>
+            <td>@item.Dia_chi</td>
+            <td>@item.So_dien_thoai</td>
+        }
+
+        <td><img src="@Model.San_pham.Hinh_anh" style="width:80px;height:80px" /></td>
+        <td>@Model.So_luong x <b style="color:lightblue">@Model.San_pham.So_luong</b></td>
+        <td>@Model.San_pham.Nguoi_cap_nhat</td>
+        <td>@Model.Thanh_tien đ</td>
+    </tr>
+</table>
+<div class="modal-footer">
+    <form action="/Home/DatHang" method="post">
+        <input type="hidden" name="Id_don_hang" value="@Model.Id_don_hang" />
+        <input type="hidden" name="Id_tai_khoan_Kh" value="@Model.Id_tai_khoan_Kh" />
+        <input type="hidden" name="Id_san_pham" value="@Model.Id_san_pham" />
+        <input type="hidden" name="Thanh_tien" value="@Model.Thanh_tien" />
+        <input type="hidden" name="Trang_thai" value="@Model.Trang_thai" />
+        <input type="hidden" name="Ngay_tao" value="@Model.Ngay_tao" />
+        <input type="hidden" name="Id_nguoi_cap_nhat" value="@Model.Id_nguoi_cap_nhat" />
+        <input type="hidden" name="Ngay_cap_nhat" value="@Model.Ngay_cap_nhat" />
+        <input type="hidden" name="Chu_thich" value="@Model.Chu_thich" />
+        <input type="hidden" min="1" name="So_luong" value="@Model.So_luong" />
+        <button type="submit" class="btn btn-default">Đặt hàng</button>
+    </form>
+</div>

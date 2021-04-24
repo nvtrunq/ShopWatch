@@ -1,0 +1,226 @@
+﻿@model Shop_watch.Models.San_pham
+@{
+    ViewBag.Title = "single_product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--================Home Banner Area =================-->
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+            <div class="banner_content text-center">
+                <h2>Chi tiết sản phẩm @Model.Ten_san_pham</h2>
+                <div class="page_link">
+                    <a href="Home/Index/">Trang chủ</a>
+                    <a href="category.html">Nam</a>
+                    <a href="single-product.html"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Home Banner Area =================-->
+<!--================Single Product Area =================-->
+<div class="product_image_area">
+    <div class="container">
+        <div class="row s_product_inner">
+            <div class="col-lg-6">
+                <div class="s_product_img">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                                <img src="@Model.Hinh_anh" alt="" style="width:60px;height:60px">
+                            </li>
+                        </ol>
+                        <div class="carousel-inner">
+
+
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="@Model.Hinh_anh" alt="First slide">
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="s_product_text">
+                    <h3>@Model.Ten_san_pham</h3>
+                    <h2>
+                        Giá:
+                        @if (Model.Gia_sale == 0)
+                        {
+                            @Model.Gia_goc
+                        }
+                        else
+                        {
+                            if (Model.Gia_sale != 0)
+                            {
+                                <del>@Model.Gia_goc</del>
+                                @Model.Gia_sale
+                            }
+                        }
+                        $
+                    </h2>
+
+
+                    <ul class="list">
+                        <li>
+                            <a class="active" href="#">
+                                <span>Sản phẩm: </span>
+                                @if (Model.Loai_san_pham == 1)
+                                {
+                                    <text>Đồng hồ nam</text>
+                                }
+                                else
+                                {
+                                    if (Model.Loai_san_pham == 2)
+                                    {
+                                        <text>Đồng hồ nữ</text>
+                                    }
+                                }
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Tình trạng: </span>
+                                @if (Model.Trang_thai == 1)
+                                {
+                                    <text>Còn hàng</text>
+                                }
+                                else
+                                {
+                                    if (Model.Trang_thai == 2)
+                                    {
+                                        <text>Hết hàng</text>
+                                    }
+                                }
+                            </a>
+                        </li>
+                    </ul>
+                    <p>
+                        @Html.Raw(Model.Mo_ta_ngan)
+                    </p>
+
+                    <div class="card_area">
+
+                        <a class="main_btn" href="/Home/themVaoGio/@Model.Id_san_pham">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--================End Single Product Area =================-->
+<!--================Product Description Area =================-->
+<section class="product_description_area">
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Các tính năng - Đặc điểm kỹ thuật</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Bình luận</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <p>
+                    @Html.Raw(Model.Mo_ta_dai)
+                </p>
+            </div>
+
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+                <form action="/Home/BinhLuan/@Model.Id_san_pham" method="post">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="comment_list">
+                                <div class="review_item">
+                                    <textarea name="Noi_dung" class="col-lg-10"></textarea>
+                                    <div class="col-lg-2">
+                                        <input type="submit" class="btn btn-primary" value="Gửi" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                @foreach (var bl in ViewBag.binhLuan)
+                {
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="comment_list">
+                                <div class="review_item">
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="@bl.Tai_khoan_Kh.Hinh_anh" style="width:40px !important;height:40px !important;border-radius:100px;" alt="Avatar Image">
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>@bl.Tai_khoan_Kh.Ho_ten</h4>
+                                            <h5>@bl.Ngay_tao</h5>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        @Html.Raw(bl.Noi_dung)
+                                    </p>
+                                </div>
+                                @if (bl.Id_tai_khoan_Ad != null)
+                                {
+                                    <div class="review_item reply">
+                                        <div class="media">
+                                            <div class="d-flex avtF">
+                                                <img src="@bl.Tai_khoan_Ad.Hinh_anh" style="width:40px !important;height:40px !important;border-radius:100px;" alt="Avatar Image">
+                                            </div>
+                                            <div class="media-body">
+                                                <h4>@bl.Tai_khoan_Ad.Ho_ten</h4>
+                                                <h5>@bl.Ngay_cap_nhat</h5>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            @Html.Raw(bl.Tra_loi_binh_luan)
+                                        </p>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                        @*<div class="col-lg-6">
+                    <div class="review_box">
+                        <h4>Post a comment</h4>
+                        <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="submit" value="submit" class="btn submit_btn">Submit Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>*@
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Product Description Area =================-->

@@ -1,0 +1,125 @@
+﻿@model Shop_watch.Models.San_pham
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+
+<div>
+    <h4>San_pham</h4>
+    <hr />
+    <dl class="dl-horizontal table-bordered">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_san_pham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_san_pham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh_anh)
+        </dt>
+
+        <dd>
+            <img src="@Model.Hinh_anh" style="width:80px;height:80px;" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loai_san_pham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loai_san_pham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia_goc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia_goc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia_sale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia_sale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.So_luong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.So_luong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nguoi_cap_nhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nguoi_cap_nhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay_Cap_nhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay_Cap_nhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mo_ta_ngan)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Mo_ta_ngan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mo_ta_dai)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Mo_ta_dai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chu_thich)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chu_thich)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trang_thai)
+        </dt>
+
+        <dd>
+            @if (Model.Trang_thai == 1)
+            {
+                <text> Còn hàng </text>
+            }
+            else
+            {
+                if (Model.Trang_thai == 2)
+                {
+                    <text> Hết hàng </text>
+                }
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.Id_san_pham }) |
+    @Html.ActionLink("Quay trở lại", "Index")
+</p>

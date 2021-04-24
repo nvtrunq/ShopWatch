@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "XemTTKH";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        color:white;
+        background-image: url('../../HinhAnh/gravity_banner.jpg');
+    }
+    h2 {
+    margin-top: 79px;
+}h2 {
+    margin-left: 81px;
+}.profile {
+    margin-left: 65px;
+}a.bt-li {
+    color: white;
+    background-color: blue;
+    width: 100px;
+    height: 52px;
+}.button {
+    margin-left: 94px;
+}
+
+</style>
+<h2>Xem thông tin tài khoản khách hàng</h2>
+<div class="profile">
+    <ul>
+        <li><h4>Họ và tên: <strong>@ViewBag.ten</strong></h4></li>
+        <li><h4>Giới tính: <strong>@ViewBag.gioitinh</strong></h4></li>
+        <li><h4>Địa chỉ: <strong>@ViewBag.diachi</strong></h4></li>
+        <li><h4>Email: <strong>@ViewBag.email</strong></h4></li>
+        <li><h4>Số điện thoại: <strong>@ViewBag.sdt</strong></h4></li>
+        <li><h4>Ngày sinh: <strong>@ViewBag.ngaysinh</strong></h4></li>
+        <li><h4>Hình ảnh: <img src="@ViewBag.HinhAnh" style="width:80px; height:80px;" alt="Image" /> </h4></li>
+    </ul>
+</div>
+<div class="button"><a class="bt-li" href="/Home/CapNhatTT/@ViewBag.idKH">Sửa thông tin</a></div>
+
+            
+            
+            
+            
+            
+            

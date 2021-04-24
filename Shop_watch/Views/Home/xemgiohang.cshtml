@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "xemgiohang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    input[type="number"] {
+    padding-left: 30px;
+    width: 70px;
+    height: 33px;
+    border-radius: 4px;
+}button.btn.btn-default {
+    margin-top: -3px;
+    background-color: blue;
+    color: white;
+}th {
+    background-color: lightgray;
+}table.table {
+    margin-top: 82px;
+}
+</style>
+<h2>xemgiohang</h2>
+
+<table class="table">
+    <tr>
+        <th>Hình ảnh</th>
+        <th>Tên sản phẩm</th>
+        <th>Đơn giá</th>
+        <th>Số lượng</th>
+        <th>Thành tiền</th>
+        <th>Tác vụ</th>
+    </tr>
+    @foreach (var item in ViewBag.ListImage)
+    {
+        <tr>
+            <td>
+                <img src="@item.San_pham.Hinh_anh" style="width:80px;height:80px" />
+            </td>
+            <td>
+                @item.San_pham.Ten_san_pham
+            </td>
+            <td>
+                @if(item.San_pham.Gia_sale == 0)
+                {
+                    @item.San_pham.Gia_goc
+                }
+                else
+                {
+                    if(item.San_pham.Gia_sale != 0)
+                    {
+                        @item.San_pham.Gia_sale
+                    }
+                }
+            </td>
+            <td>
+               <form action="/Home/CapNhatSoLuong" method="post">
+                   <input type="hidden" name="Id_don_hang" value="@item.Id_don_hang" />
+                   <input type="hidden" name="Id_tai_khoan_Kh" value="@item.Id_tai_khoan_Kh" />
+                   <input type="hidden" name="Id_san_pham" value="@item.Id_san_pham" />
+                   <input type="hidden" name="Thanh_tien" value="@item.Thanh_tien" />
+                   <input type="hidden" name="Trang_thai" value="@item.Trang_thai" />
+                   <input type="hidden" name="Ngay_tao" value="@item.Ngay_tao" />
+                   <input type="hidden" name="Id_nguoi_cap_nhat" value="@item.Id_nguoi_cap_nhat" />
+                   <input type="hidden" name="Ngay_cap_nhat" value="@item.Ngay_cap_nhat" />
+                   <input type="hidden" name="Chu_thich" value="@item.Chu_thich" />
+                   <input type="number" min="1" name="So_luong" value="@item.So_luong" />
+                   <button type="submit" class="btn btn-default">Cập nhật</button>
+               </form>
+            </td>
+            <td style="color:red;">
+                @item.Thanh_tien
+            </td>
+            <td>
+                <button onclick="TienHanhDatHang(@item.Id_don_hang)" class="btn btn-primary">
+                    Tiến hành đặt hàng
+                </button>
+                <button onclick="XoaDonHang(@item.Id_don_hang)" class="btn btn-danger">
+                    Xoá đơn
+                </button>
+            </td>
+        </tr>
+    }
+</table>
+<script>
+    function TienHanhDatHang(id) {
+        window.location.href = "/Home/DatHang/" + id;
+    }
+    function XoaDonHang(id) {
+        var f = confirm("Tôi sẽ mua sản phẩm này sau!");
+        if (f == true) {
+            window.location.href = "/Home/XoaDonHang/" + id;
+        }
+    }
+</script>

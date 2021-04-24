@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Shop_watch.Models.Tin_tuc>
+
+@{
+    ViewBag.Title = "Tin tức";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Tin tức</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten_tin_tuc)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Noi_dung)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Hinh_anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nguoi_cap_nhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngay_Cap_nhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chu_thich)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trang_thai)
+        </th>
+        <th>Tác vụ</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten_tin_tuc)
+        </td>
+        @*<td>
+            @Html.Raw(item.Noi_dung)
+        </td>*@
+        <td>
+            <img src="@item.Hinh_anh"  style="width:80px;height:80px"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nguoi_cap_nhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngay_Cap_nhat)
+        </td>
+        <td>
+            @Html.Raw(item.Chu_thich)
+        </td>
+        <td>
+            @if(item.Trang_thai==1)
+            {
+                <text>Hiển thị</text>
+            } else
+            {
+                <text>Ẩn</text>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.Id_Tintuc }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.Id_Tintuc }) |
+            @Html.ActionLink("Xoá", "Delete", new { id=item.Id_Tintuc })
+        </td>
+    </tr>
+}
+
+</table>

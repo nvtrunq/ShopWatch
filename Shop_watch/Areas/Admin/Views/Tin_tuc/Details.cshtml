@@ -1,0 +1,82 @@
+﻿@model Shop_watch.Models.Tin_tuc
+
+@{
+    ViewBag.Title = "Chi tiết tin tức";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Xem chi tiết tin tức</h2>
+
+<div>
+    <h4>Tin_tuc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_tin_tuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_tin_tuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Noi_dung)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Noi_dung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh_anh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinh_anh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nguoi_cap_nhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nguoi_cap_nhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay_Cap_nhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay_Cap_nhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chu_thich)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Chu_thich)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trang_thai)
+        </dt>
+
+        <dd>
+            @if (Model.Trang_thai == 1)
+            {
+                <text>Hiển thị</text>
+            }
+            else
+            {
+                <text>Ẩn</text>
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.Id_Tintuc }) |
+    @Html.ActionLink("Quay trở lại", "Index")
+</p>

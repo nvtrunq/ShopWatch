@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Shop_watch.Models.Don_hang>
+@{
+    ViewBag.Title = "QlyDonHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container" style="margin-top:60px;">
+
+        <div class="modal-header">
+            <h2>Quản lý đơn hàng của tôi</h2>
+        </div>
+        <table class="table" style="box-shadow:2px 2px 10px #808080;">
+            <tr>
+                <th>Ngày mua</th>
+                <th>Tên sản phẩm</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái đơn hàng</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Ngay_tao
+                    </td>
+                    <td>
+                        @item.San_pham.Ten_san_pham
+                    </td>
+                    <td>
+                        @Convert.ToInt32(item.Thanh_tien).ToString("#,###")
+                    </td>
+                    <td>
+                        @if (item.Trang_thai == 2)
+                        {
+                            <text>Đã tiếp nhận đơn hàng</text>
+                        }
+                        else
+                        {
+                            if (item.Trang_thai == 3)
+                            {
+                                <text>Đang giao hàng</text>
+                            }
+                            else
+                            {
+                                if (item.Trang_thai == 4)
+                                {
+                                    <text>Đã thanh toán</text>
+                                }
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>

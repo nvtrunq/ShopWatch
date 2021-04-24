@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="icon" href="~/Content/css_web/img/favicon.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/css_web/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/css_web/vendors/linericon/style.css">
+    <link rel="stylesheet" href="~/Content/css_web/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css_web/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/css_web/vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="~/Content/css_web/vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="~/Content/css_web/vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="~/Content/css_web/vendors/jquery-ui/jquery-ui.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="~/Content/css_web/css/style.css">
+    <link rel="stylesheet" href="~/Content/css_web/css/responsive.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .main_menu {
+    height: 1px;
+}a.navbar-brand.logo_h {
+    padding-top: 35px;
+}.banner_inner.d-flex.align-items-center {
+    margin-top: -100px;
+}
+    </style>
+</head>
+<body>
+    <!--================Header Menu Area =================-->
+    <header class="header_area">
+        <div class="top_menu row m0">
+            <div class="container-fluid">
+                <div class="float-left">
+                    <p>Gọi cho chúng tôi: 0961 097 065</p>
+                </div>
+                <div class="float-right">
+                    <ul class="right_side">
+                        <li>
+                            <a href="https://localhost:44362/Home/Login">
+                                Đăng nhập/Đăng ký
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://localhost:44362/Admin/Home_admin_/login">
+                                Tài khoản của tôi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://localhost:44362/Home/About">
+                                Liên hệ chúng tôi
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="https://localhost:44362/Home/Index">
+                        <img src="~/Content/css_web/img/logo.png" alt="">
+                    </a>
+                  
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================Header Menu Area =================-->
+    @RenderBody()
+    <!--================ start footer Area  =================-->
+    <footer class="footer-area section_gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6 class="footer_title"><i class="fab fa-asymmetrik"></i>Showrom</h6>
+                        <p>
+                            <ul id="address-1">
+                                <li> Số 473 Nguyễn Khang, quận Cầu Giấy, Hà Nội</li>
+                                <li>Hotline mua hàng: 093.413.6886</li>
+                                <li>Điện thoại: 024.8586.8484</li>
+                                <li>Email: mrg@casio-vietnam.com</li>
+                            </ul>
+                        </p>   
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6 class="footer_title">Bản tin</h6>
+                        <p>Luôn cập nhật các xu hướng mới nhất của thời đại</p>
+                        <div id="mc_embed_signup">
+                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                  method="get" class="subscribe_form relative">
+                                <div class="input-group d-flex flex-row">
+                                    <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '"
+                                           required="" type="email">
+                                    <button class="btn sub-btn">
+                                        <span class="lnr lnr-arrow-right"></span>
+                                    </button>
+                                </div>
+                                <div class="mt-10 info"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget instafeed">
+                        <h6 class="footer_title">Nguồn cấp dữ liệu</h6>
+                        <ul class="list instafeed d-flex flex-wrap">
+                            <li>
+                                <img src="~/Content/css_web/img/instagram/Image-01.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="~/Content/css_web/img/instagram/Image-02.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="~/Content/css_web/img/instagram/Image-03.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="~/Content/css_web/img/instagram/Image-04.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="~/Content/css_web/img/instagram/Image-05.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="~/Content/css_web/img/instagram/Image-06.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="~/Content/css_web/img/instagram/Image-07.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="~/Content/css_web/img/instagram/Image-08.jpg" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="single-footer-widget f_social_wd">
+                        <h6 class="footer_title">Theo dõi chúng tôi</h6>
+                        <p>Mạng xã hội</p>
+                        <div class="f_social">
+                            <a href="https://www.facebook.com/trungnguyen.it.0111">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-dribbble"></i>
+                            </a>
+                            <a href="https://www.instagram.com/ntrung0111/">
+                                <i class="fa fa-instagram">
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                <p class="col-lg-12 footer-text text-center">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> Showroom chính hãng đồng hồ  tại Việt Nam <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.facebook.com/trungnguyen.it.0111" target="_blank">NguyenVanTrung</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!--================ End footer Area  =================-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="~/Content/css_web/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/css_web/js/popper.js"></script>
+    <script src="~/Content/css_web/js/bootstrap.min.js"></script>
+    <script src="~/Content/css_web/js/stellar.js"></script>
+    <script src="~/Content/css_web/vendors/lightbox/simpleLightbox.min.js"></script>
+    <script src="~/Content/css_web/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="~/Content/css_web/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Content/css_web/vendors/isotope/isotope-min.js"></script>
+    <script src="~/Content/css_web/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/Content/css_web/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Content/css_web/vendors/counter-up/jquery.waypoints.min.js"></script>
+    <script src="~/Content/css_web/vendors/flipclock/timer.js"></script>
+    <script src="~/Content/css_web/vendors/counter-up/jquery.counterup.js"></script>
+    <script src="~/Content/css_web/js/mail-script.js"></script>
+    <script src="~/Content/css_web/js/theme.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

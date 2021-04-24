@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Shop_watch.Models.Tai_khoan_Kh>
+
+@{
+    ViewBag.Title = "Tài khoản khách hàng";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<h2>Tài khoản khách hàng</h2>
+
+<p>
+    @Html.ActionLink("Tài khoản khách hàng mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ho_ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gioi_tinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngay_sinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dia_chi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.So_dien_thoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hinh_anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nguoi_cap_nhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngay_cap_nhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trang_thai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mat_khau)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ho_ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gioi_tinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngay_sinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dia_chi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.So_dien_thoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hinh_anh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nguoi_cap_nhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngay_cap_nhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trang_thai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mat_khau)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.Id_Tai_khoan_kh }) |
+            @Html.ActionLink("Xem chi tiết", "Details", new { id=item.Id_Tai_khoan_kh }) |
+            @Html.ActionLink("Xoá", "Delete", new { id=item.Id_Tai_khoan_kh })
+        </td>
+    </tr>
+}
+
+</table>

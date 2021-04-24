@@ -1,0 +1,81 @@
+﻿@model Shop_watch.Models.Tin_tuc
+
+@{
+    ViewBag.Title = "Xoá tin tức";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Xoá tin tức</h2>
+
+<h3>Bạn có chắc chắn muốn xoá bỏ tin tức này?</h3>
+<div>
+    <h4>Tin_tuc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_tin_tuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_tin_tuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Noi_dung)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Noi_dung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh_anh)
+        </dt>
+
+        <dd>
+            <img src="@Model.Hinh_anh" style="width:80px;height:80px"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nguoi_cap_nhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nguoi_cap_nhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay_Cap_nhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay_Cap_nhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chu_thich)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Chu_thich)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trang_thai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trang_thai)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay trở lại", "Index")
+        </div>
+    }
+</div>

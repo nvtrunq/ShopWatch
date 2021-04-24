@@ -1,0 +1,123 @@
+﻿@model Shop_watch.Models.Tai_khoan_Ad
+
+@{
+    ViewBag.Title = "Chi tiết tài khoản giám đốc";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Tai_khoan_Ad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ho_ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ho_ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gioi_tinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gioi_tinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay_sinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay_sinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dia_chi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dia_chi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.So_dien_thoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.So_dien_thoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh_anh)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Hinh_anh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nguoi_cap_nhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nguoi_cap_nhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay_cap_nhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay_cap_nhat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chu_thich)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Chu_thich)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trang_thai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trang_thai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_chuc_vu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_chuc_vu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mat_khau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mat_khau)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.Id_Tai_khoan_ad }) |
+    @Html.ActionLink("Quay trở lại", "Index")
+</p>
